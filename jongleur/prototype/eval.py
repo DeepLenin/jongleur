@@ -7,7 +7,7 @@ import click
 @click.command()
 @click.option('--nn', type=str, default="./model.py")
 @click.option('--nn_params', type=str, default="{}")
-@click.option('--dataset', type=str)
+@click.option('--dataset', type=str, required=True)
 def sum(nn, nn_params, dataset):
     spec = imp.spec_from_file_location("my_module", nn)
     module = imp.module_from_spec(spec)
